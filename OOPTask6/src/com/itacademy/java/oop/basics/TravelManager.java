@@ -3,14 +3,19 @@ package com.itacademy.java.oop.basics;
 public class TravelManager {
 
     static Family changeDestination(Family family, TravelDestination destination) {
-        if (family.getTravelDestination() != destination) {
-
+        if (!isEqual(family.getTravelDestination(), destination)) {
             Family newFamily  = new Family(family.getPersons(), family.getVehicle(),destination);
             return newFamily;
         }
         return family;
     }
 
+    static boolean isEqual(TravelDestination first, TravelDestination second){
+        if(first.getCity().toUpperCase() != second.getCity().toUpperCase() || first.getName().toUpperCase() != second.getName().toUpperCase() ){
+            return false;
+        }
+        return true;
+    }
     static void travel(Family family) {
         double needRefill = needRefuel(family);
         if (needRefill > 0) {

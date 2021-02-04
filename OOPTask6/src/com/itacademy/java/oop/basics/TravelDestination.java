@@ -17,4 +17,12 @@ public class TravelDestination {
     public double getDistance() {
         return distance;
     }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
